@@ -2,12 +2,10 @@
 <html>
 
 <head>
-
     <meta charset="utf-8" />
     <title>送给芝芝的毕业礼物</title>
     <link rel="stylesheet" href="css/in2.css" />
-    <script src="js/jquery.js">
-    </script>
+    <script src="js/jquery.js"></script>
 
     <style>
         .btn {
@@ -17,6 +15,9 @@
             outline: none;
             border: 2px solid pink;
             border-radius: 10px;
+            position: absolute;
+            left: 50px; /* 调整按钮到右侧 */
+            top: 10px; /* 调整按钮位置 */
         }
         
         h2 {
@@ -34,19 +35,30 @@
             top: 1000px;
             height: 40px;
         }
-        /* .wrap {
-            height: 800px;
-        } */
+
+        /* 打字机效果的样式 */
+        @font-face {
+            font-family: 'XingKai';
+            src: url('https://fonts.gstatic.com/ea/notosanssc/v1/NotoSansSC-Regular.woff2') format('woff2');
+        }
+
+        .typewriter {
+            position: fixed;
+            left: 10px;
+            top: 100px;
+            font-family: 'XingKai', cursive;
+            font-size: 20px;
+            white-space: pre-wrap; /* 允许保留空白字符 */
+            overflow: hidden;
+        }
     </style>
-
-
-
 </head>
 
 <body>
     <h2 id='top'>赵怡芝毕业快乐!</h2>
-    <audio src="https://ct-sycdn.kuwo.cn/a4464fa6f0996fa49cac4ef0c871230a/666bfdb9/resource/n3/18/62/3293164897.mp3" autoplay="true" loop="true" hidden="false" controls></audio>
-    <button id="play" class="btn">播放</button>
+    <audio id="bgm" src="https://ct-sycdn.kuwo.cn/a4464fa6f0996fa49cac4ef0c871230a/666bfdb9/resource/n3/18/62/3293164897.mp3" loop="true" hidden="true" controls></audio>
+    <!-- <button id="play" class="btn">播放</button> -->
+    <button id="show-text" class="btn" style="right: 110px; top: 10px;">点击查看我给你说的话</button>
     <!--/*外层容器*/-->
     <div class="wrap">
         <!--/*包裹所有元素的容器*/-->
@@ -91,15 +103,71 @@
             <span class="in_bottom">
                 <img src="images/12.jpg" class="in_pic" />
             </span>
-
         </div>
     </div>
     <h2 id="footer">感谢在2024的南京遇到赵怡芝!</h2>
+
+    <!-- 添加打字机效果的文字 -->
+    <div class="typewriter" id="typewriter">
+        <p id="typewriter-text"></p>
+    </div>
+
+    <!-- 添加打字机音效 -->
+    <audio id="typewriter-sound" src="bgm/打字机.mp3"></audio>
+
     <script>
+        $(document).ready(function() {
+            // 尝试在页面加载后自动播放BGM
+            var bgm = document.getElementById("bgm");
+            var playPromise = bgm.play();
+
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    // 如果自动播放失败，添加一个用户交互事件以播放BGM
+                    $(document).one('click', function() {
+                        bgm.play();
+                    });
+                });
+            }
+        });
+
         $('#play').click(function() {
-            //alert('aaa');
-            $('audio')[0].play();
-        })
+            $('#bgm')[0].play();
+        });
+
+        $('#show-text').click(function() {
+            // 开始打字机效果
+            typeWriter();
+        });
+
+        // 打字机效果的JavaScript实现
+        var text = `亲爱的芝芝，
+
+在你毕业的这一天，我怀着无比喜悦和骄傲的心情为你送上最真挚的祝福。
+很开心认识你，也很开心你考上研。
+我觉得今年最有意义的事情就是在一个风和日丽的下午向你发送那一句消息。
+你就像一颗闪亮的星星，带给我很多欢乐。
+无论未来的路途多么未知和挑战重重，我相信你一定能够以坚定的信念和勇气迎接每一个新起点。
+我也会陪着你一起。
+愿我们携手并肩，共同迎接更美好的明天。
+祝你在新的旅程中一帆风顺，心想事成，永远幸福快乐。
+我爱你！
+
+宋章耀，2024/6/14`;
+
+        var index = 0;
+        var speed = 100; // 每个字的显示速度，毫秒
+
+        function typeWriter() {
+            if (index < text.length) {
+                document.getElementById("typewriter-text").innerHTML += text.charAt(index);
+                if (text.charAt(index) !== ' ' && text.charAt(index) !== '\n' && text.charAt(index) !== '<' && text.charAt(index) !== '>') {
+                    document.getElementById("typewriter-sound").play();
+                }
+                index++;
+                setTimeout(typeWriter, speed);
+            }
+        }
     </script>
 </body>
 
