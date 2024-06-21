@@ -1,56 +1,31 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<title>css-3d旋转</title>
-		<link rel="stylesheet" href="my.css" />
-	</head>
-	<body>
-		<!--/*外层最大容器*/-->
-		<div class="wrap">
-	<!--	/*包裹所有元素的容器*/-->
-		<div class="cube">
-			<!--前面图片 -->
-			<div class="out_front">
-				<img src="images/1.jpg"  class="pic"/>
-			</div>
-			<!--后面图片 -->
-			<div class="out_back">
-				<img src="images/2.jpg"  class="pic"/>
-			</div>
-			<!--左图片 -->
-			<div class="out_left">
-				<img src="images/3.jpg"  class="pic"/>
-			</div>
-			<div class="out_right">
-				<img src="images/4.jpg"  class="pic"/>
-			</div>
-			<div class="out_top">
-				<img src="images/5.jpg"  class="pic"/>
-			</div>
-			<div class="out_bottom">
-				<img src="images/6.jpg"  class="pic"/>
-			</div>
-			<!--小正方体 --> 
-			<span class="in_front">
-				<img src="images/7.jpg" class="in_pic" />
-			</span>
-			<span class="in_back">
-			     <img src="images/8.jpg" class="in_pic" />
-			</span>
-			<span class="in_left">
-				<img src="images/9.jpg" class="in_pic" />
-			</span>
-			<span class="in_right">
-				<img src="images/10.jpg" class="in_pic" />
-			</span>
-			<span class="in_top">
-				<img src="images/11.jpg" class="in_pic" />
-			</span>
-			<span class="in_bottom">
-				<img src="images/12.jpg" class="in_pic" />
-			</span>
-		</div>
-		</div>
-	</body>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自动播放音乐</title>
+    <script>
+        function togglePlay() {
+            var audio = document.getElementById('bgm');
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- 图片展示 -->
+    <img src="images/1.jpg" alt="图片描述" style="width:100%;">
+
+    <!-- 背景音乐 -->
+    <audio id="bgm" loop>
+        <source src="bgm/起风了.mp3" type="audio/mpeg">
+        您的浏览器不支持 audio 元素。
+    </audio>
+
+    <!-- 播放按钮 -->
+    <button onclick="togglePlay()">播放/暂停音乐</button>
+</body>
 </html>

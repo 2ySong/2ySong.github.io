@@ -17,40 +17,37 @@
             border: 2px solid green;
             border-radius: 15px;
             position: absolute;
-            left: 50px; /* 调整按钮到右侧 */
-            top: 10px; /* 调整按钮位置 */
+            left: 50px;
+            /* 调整按钮到右侧 */
+            top: 10px;
+            /* 调整按钮位置 */
             font-size: 16px;
         }
-        
+
         h2 {
             text-align: center;
             font-size: 30px;
             color: #FF8C00;
         }
-        
+
         #top {
             height: 50px;
         }
-        
+
         #footer {
             position: relative;
             top: 1000px;
             height: 40px;
         }
 
-        /* 打字机效果的样式 */
-        @font-face {
-            font-family: 'XingKai';
-            src: url('https://fonts.gstatic.com/ea/notosanssc/v1/NotoSansSC-Regular.woff2') format('woff2');
-        }
 
         .typewriter {
             position: fixed;
             left: 10px;
             top: 100px;
-            font-family: 'XingKai', cursive;
             font-size: 20px;
-            white-space: pre-wrap; /* 允许保留空白字符 */
+            white-space: pre-wrap;
+            /* 允许保留空白字符 */
             overflow: hidden;
         }
     </style>
@@ -91,7 +88,7 @@
                 <img src="images/7.jpg" class="in_pic" />
             </span>
             <span class="in_back">
-                 <img src="images/8.jpg" class="in_pic" />
+                <img src="images/8.jpg" class="in_pic" />
             </span>
             <span class="in_left">
                 <img src="images/9.jpg" class="in_pic" />
@@ -118,7 +115,7 @@
     <audio id="typewriter-sound" src="bgm/打字机.mp3"></audio>
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             // 尝试在页面加载后自动播放BGM
             var bgm = document.getElementById("bgm");
             var playPromise = bgm.play();
@@ -126,18 +123,18 @@
             if (playPromise !== undefined) {
                 playPromise.catch(error => {
                     // 如果自动播放失败，添加一个用户交互事件以播放BGM
-                    $(document).one('click', function() {
+                    $(document).one('click', function () {
                         bgm.play();
                     });
                 });
             }
         });
 
-        $('#play').click(function() {
+        $('#play').click(function () {
             $('#bgm')[0].play();
         });
 
-        $('#show-text').click(function() {
+        $('#show-text').click(function () {
             // 开始打字机效果
             typeWriter();
         });
