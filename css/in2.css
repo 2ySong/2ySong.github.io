@@ -15,11 +15,11 @@
     font-family: 'ffff';
     font-display: swap;
     src: url(../fonts/xwwk/LXGWWenKai-Regular.ttf)format('truetype'),
-    url('../fonts/xwwk/LXGWWenKai-Bold.ttf')format('truetype'),
-    url('../fonts/xwwk/LXGWWenKai-Light.ttf')format('truetype'),
-    url('../fonts/xwwk/LXGWWenKaiMono-Regular.ttf')format('truetype'),
-    url('../fonts/xwwk/LXGWWenKaiMono-Bold.ttf')format('truetype'),
-    url('../fonts/xwwk/LXGWWenKaiMono-Light.ttf')format('truetype');
+        url('../fonts/xwwk/LXGWWenKai-Bold.ttf')format('truetype'),
+        url('../fonts/xwwk/LXGWWenKai-Light.ttf')format('truetype'),
+        url('../fonts/xwwk/LXGWWenKaiMono-Regular.ttf')format('truetype'),
+        url('../fonts/xwwk/LXGWWenKaiMono-Bold.ttf')format('truetype'),
+        url('../fonts/xwwk/LXGWWenKaiMono-Light.ttf')format('truetype');
     font-weight: normal;
 
 }
@@ -29,7 +29,7 @@ html {
     /*背景颜色*/
     height: 100%;
     /* font-family: Consolas, 'Courier New', monospace; */
-    font-family: 'ffff',Consolas, 'Courier New', monospace;
+    font-family: ffff, Consolas, 'Courier New', monospace;
 
     /* #霞鹜文楷, */
 }
