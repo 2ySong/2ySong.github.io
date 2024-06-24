@@ -12,9 +12,9 @@
 } */
 
 @font-face {
-    font-family: 'ffff';
+    font-family: 'xwwk';
     font-display: swap;
-    src: url(../fonts/xwwk/LXGWWenKai-Regular.ttf)format('truetype');
+    src: url(https://szy-imgs.oss-cn-shanghai.aliyuncs.com/fonts/xwwk/LXGWWenKaiMono-Regular.ttf)format('truetype');
     font-weight: normal;
 
 }
@@ -24,7 +24,7 @@ html{
     /*背景颜色*/
     height: 100%;
     /* font-family: Consolas, 'Courier New', monospace; */
-    font-family: ffff,Consolas, 'Courier New', monospace;
+    font-family: "霞鹜文楷",ffff,Consolas, 'Courier New', monospace;
 
     /* #霞鹜文楷, */
 }

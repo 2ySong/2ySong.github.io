@@ -1,9 +1,28 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>自动播放音乐</title>
+
+    <style>
+        @font-face {
+            font-family: 'xwwk';
+            font-display: swap;
+            src: url(https://szy-imgs.oss-cn-shanghai.aliyuncs.com/fonts/xwwk/LXGWWenKaiMono-Regular.ttf)format('truetype');
+            font-weight: normal;
+
+        }
+
+        h1 {
+            text-align: center;
+            color: #832c2c;
+            font-size: 2em;
+            margin-top: 100px;
+            font-family: 'xwwk', Consolas, 'Courier New', monospace;
+        }
+    </style>
     <script>
         function togglePlay() {
             var audio = document.getElementById('bgm');
@@ -15,17 +34,10 @@
         }
     </script>
 </head>
+
 <body>
-    <!-- 图片展示 -->
-    <img src="images/1.jpg" alt="图片描述" style="width:100%;">
 
-    <!-- 背景音乐 -->
-    <audio id="bgm" loop>
-        <source src="bgm/起风了.mp3" type="audio/mpeg">
-        您的浏览器不支持 audio 元素。
-    </audio>
-
-    <!-- 播放按钮 -->
-    <button onclick="togglePlay()">播放/暂停音乐</button>
+    <h1> 让天下没有难做的生意</h1>
 </body>
+
 </html>
