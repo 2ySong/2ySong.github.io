@@ -29,3 +29,8 @@
 <font color=Red>红色</font>
 <font size=5>尺寸</font>
 
+<style>
+    body {
+        font-family: 霞鹜文楷, Consolas, 'Courier New', monospace
+    }
+</style>
