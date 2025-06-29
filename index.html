@@ -22,30 +22,31 @@
             font-size: 2em;
             margin-top: 100px;
             font-family: 霞鹜文楷, Consolas, 'Courier New', monospace;
-            font-weight: 200;
+            font-weight: 100;
         }
 
         b {
-            font-weight: 900;
+            font-family: 微软雅黑, 汉仪全唐诗简;
             font-size: larger;
         }
-    </style>
-    <script>
-        function togglePlay() {
-            var audio = document.getElementById('bgm');
-            if (audio.paused) {
-                audio.play();
-            } else {
-                audio.pause();
-            }
+
+        /* #data-inline-type {
+            font-family: 微软雅黑, 汉仪全唐诗简;
+            font-size: larger;
+        } */
+
+        *[data-inline-type^="B"] {
+            font-family: 方正聚珍新仿简体;
+            font-weight: 800;
         }
-    </script>
+    </style>
 </head>
 
 <body>
 
     <h1> 让天下没有难做的生意</h1>
     <h1> <b>让天下没有难做的生意</b></h1>
+    <h1 data-inline-type="B">让天下没有难做的生意</h1>
 </body>
 
 </html>
